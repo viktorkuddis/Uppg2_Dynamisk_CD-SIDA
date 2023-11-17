@@ -1,0 +1,200 @@
+/* HEADER HEADER HEADER HEADER HEADER*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: var(--universal-content-padding);
+}
+
+.logo_section a {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.logo_section a:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.menu-icon {
+    height: 2.5rem;
+    fill: var(--light-text-color);
+    margin: 0.5rem;
+    margin-bottom: 0rem;
+
+}
+
+.navigation {
+    /* flexar länkarna i navigationen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    /* sätter storlek så de fyller hela skärmen 
+    Eftersom menyn inte verkar villja vara kvar i vievport på mobila enheter finns också en bakgrunds-platta med en background color*/
+    height: 100vh;
+    width: 100vw;
+    z-index: 92;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    /* navigationen ligger mellan togglebutton och bakgrundsplattan i z-index */
+}
+
+.nav-item {
+    list-style: none;
+    background-color: none;
+    background-color: transparent;
+    text-transform: uppercase;
+
+    font-size: 1.5rem;
+}
+
+#active {
+    border-bottom: 2px solid var(--light-text-color);
+
+}
+
+.nav-item a {
+    background-color: transparent;
+    text-decoration: none;
+    padding: 0.5rem;
+
+}
+
+
+
+/* bakgrundsplatta med background color separat för menylänkarna eftersom dom inte verkar vilja va kvar i viewport vid skroll. */
+/* För att lösa detta sätts storleken på bakgrundsplatta på 100% av dokumentet */
+.background-plate {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    z-index: 91;
+}
+
+/* placera logo och toggle över bakgrundsplattan och navigationen så att de synsoch blir tillgängliga för klick */
+.menu-toggle-btn,
+.logo_section {
+    position: relative;
+    z-index: 93;
+}
+
+/* döljer checkboxen som checkas i när vi tryckerpå toggle-ikonen. */
+#toggle-navigation-list {
+    display: none;
+}
+
+/* När toggle-navigation-list INTE är ICHECKAD, dölj dess efterföljande syskon med classen show-and-hide.   */
+#toggle-navigation-list:not(:checked)~.show-and-hide {
+    display: none;
+}
+
+
+.header-wrapping {
+    background-color: var(--primary-color);
+}
+
+
+@media (min-width: 768px) {
+
+    .background-plate,
+    .menu-toggle-btn {
+        display: none;
+    }
+
+    #toggle-navigation-list:not(:checked)~.show-and-hide {
+        display: flex;
+        position: unset;
+        flex-direction: row;
+        height: unset;
+        width: unset;
+    }
+
+    .nav-item {
+        font-size: 0.9rem;
+        height: 1.5rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .nav-item:hover {
+        color: white;
+        border-bottom: 2px solid var(--light-text-color);
+
+    }
+
+    #active {
+        color: white;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+/* HEADER HEADER HEADER HEADER HEADER*/
+
+/* ---------------------------------- */
+
+/* FOOTER FOOTER FOOTER FOOTER FOOTER */
+
+
+.footer-wrapping {
+    background-color: var(--light-background-color);
+
+}
+
+footer {
+    padding: var(--universal-content-padding);
+}
+
+
+.footer-icons_section {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.footer-icons_section a {
+    background-color: transparent;
+}
+
+.footer-icon {
+    width: calc(100vw / 10);
+    fill: #92A4B4;
+}
+
+
+/* FOOTER FOOTER FOOTER FOOTER FOOTER */
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .footer-icons_section {
+        gap: 3rem;
+        justify-content: start;
+        padding-left: var(--universal-content-padding);
+    }
+
+    .footer-icon {
+        width: 2rem;
+    }
+}

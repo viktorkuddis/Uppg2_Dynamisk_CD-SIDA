@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #2FB4B5;
+    --secondary-color: #FC5D79;
+    --tertiary-color-no1: #2D3947;
+    --tertiary-color-no2: #19222B;
+    --light-background-color: #FFFFFF;
+    --light-text-color: #FFFFFF;
+    --dark-text-color: var(--tertiary-color-no2);
+
+    --main-font: 'Open Sans', sans-serif;
+    --accent-font: 'Montserrat', sans-serif;
+
+    --universal-content-padding: 1rem;
+}
+
+/* sprider ut elementen över sidan från top till btm i de fall skärmen är för stor eller sidans innehåll är för kort för att fylla hela skämen*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* [skala ner rem-storleken lite för mobilaenheter]*/
+html {
+    font-size: 90%;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+hr {
+    height: 2px;
+    width: 4rem;
+    margin: 1rem auto;
+    background-color: rgba(125, 125, 125, 0.3);
+    border: none;
+}
+
+.universal-content-padding {
+    padding: var(--universal-content-padding);
+}
+
+
+
+body {
+    /* [Allmän font] */
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+main {
+    line-height: 1.6;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+/* [Länk-styling] */
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: rgba(125, 125, 125, 0.3);
+    font-family: var(--accent-font);
+    font-weight: 400;
+
+}
+
+p a {
+    font-style: italic;
+}
+
+a:hover {
+    background-color: rgba(125, 125, 125, 0.1);
+    text-decoration: underline;
+}
+
+/* Accent-font */
+
+
+.btn {
+    background-color: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--light-text-color);
+    border: 2px solid var(--light-text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+}
+
+.btn:hover {
+    background-color: rgb(255, 255, 255, 0.3);
+    text-decoration: none;
+}
+
+.callout-urgent {
+    background-color: lightpink;
+    color: firebrick;
+    border: 2px solid indianred;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem
+}
+
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 100%;
+    }
+
+    /* dessa två gör ungefär samma sak men med olika användningsområden: */
+    /* denna är ganska universal och används i stora innehållssjok */
+    /* denna bär med sig padding från mobile-designen */
+    .universal-content-padding {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* denna används vid design-sektioner där de finns bild och text och bakgrundswrapping ändå behöver fylla bredden. men utan padding på bilderna. */
+    /* denna bär INGEN information om padding. Finns ej i mobile-desigen */
+    .content-max-width {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+}

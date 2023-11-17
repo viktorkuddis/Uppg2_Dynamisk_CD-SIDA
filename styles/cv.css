@@ -1,0 +1,155 @@
+.h1-wrapping {
+    background-color: var(--primary-color);
+}
+
+.utbildning-wrapping {
+    background-color: var(--tertiary-color-no1);
+}
+
+.school-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.school {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.school-icon {
+    height: 4rem;
+    width: 4rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: grey;
+    background-position: center;
+    background-size: cover;
+}
+
+.katedral-icon {
+    background-image: url(../images/katedral.jpg);
+
+}
+
+.ltu-icon {
+    background-image: url(../images/ltu.jpeg);
+}
+
+.chas-icon {
+    background-image: url(../images/chas.png);
+}
+
+
+.erfarenhet-wrapping {
+    background-color: var(--light-background-color);
+    color: var(--dark-text-color);
+}
+
+.experience-card img {
+    max-height: 15vw;
+    max-width: 50vw;
+}
+
+/* döljer desktopversionen av företagslogo */
+.logo-desktop {
+    display: none;
+}
+
+.experience-card-container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience-card {
+
+    text-align: center;
+}
+
+.experience-card:hover {
+    background-color: rgba(146, 164, 180, 0.1)
+}
+
+.kompetenser-wrapping {
+    background-color: var(--tertiary-color-no2);
+}
+
+.kompetenser_section {
+    display: flex;
+    /* Nillställ pading som class universal-content-padding ger så att bilden kan fylla ut helt.. (Men vill ha effekten av dess max-content vid mediaQ)*/
+    padding: 0;
+}
+
+.img-container {
+    flex-shrink: 0;
+    width: 30vw;
+    background-image: url(../images/brain.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: var(--primary-color);
+}
+
+
+
+@media (min-width: 768px) {
+    .school-cards-container {
+        flex-direction: row-reverse;
+        gap: unset;
+        justify-content: space-around;
+        margin: unset;
+        padding-bottom: 1rem;
+    }
+
+    /* döljer mobilversionen av företagslogos */
+    .logo-mobile {
+        display: none;
+    }
+
+    .experience-card img {
+        max-height: unset;
+        max-width: unset;
+    }
+
+    /* flexcontainer som flexar varje kort */
+    .experience-card-container {
+        gap: 1rem;
+        margin-bottom: var(--universal-content-padding);
+
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* visar deskhopversionen av företagslogo */
+    .logo-desktop {
+        display: block;
+        border-radius: 0.4rem 0px 0px 0.4rem;
+        /* fyller hela h3 */
+        width: 100%;
+    }
+
+    /* flexcontainer som flexar mellan logo(h3) och text(p) */
+    .experience-card {
+        text-align: left;
+        display: flex;
+        align-items: center;
+
+        border-radius: 0.5rem;
+        border: 1px solid #92A4B4;
+    }
+
+    .experience-card h3 {
+        width: 15%;
+    }
+
+    .experience-card p {
+        padding: 0rem 2rem;
+        width: 80%;
+        margin-bottom: 0px;
+    }
+}

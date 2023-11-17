@@ -1,0 +1,73 @@
+.cv-wrapping {
+    background-color: var(--primary-color);
+    padding-bottom: var(--universal-content-padding);
+}
+
+/* för att få bilderna att gå mot kanterna kan inte hela artikeln omslutas av unoiversal content padding */
+h1,
+p {
+    padding: 0 var(--universal-content-padding);
+}
+
+
+.img_container {
+    background-color: var(--tertiary-color-no1);
+    width: 100vw;
+    height: calc(100vw / 2);
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.section_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+@media (min-width: 768px) {
+
+    .section_content {
+        flex-direction: row;
+        padding: 0px;
+    }
+
+    .img_container {
+
+        max-width: 400px;
+
+        max-height: 400px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .img1,
+    .img3 {
+        flex-direction: row;
+    }
+
+    p {
+        padding: calc(var(--universal-content-padding) * 2);
+    }
+
+    .section-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .section-wrap-ver1 {
+        background-color: var(--tertiary-color-no1);
+    }
+
+    .section-wrap-ver2 {
+        background-color: var(--tertiary-color-no2);
+    }
+}
