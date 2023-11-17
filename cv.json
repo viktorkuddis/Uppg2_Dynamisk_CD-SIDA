@@ -3,17 +3,20 @@
     {
       "skola": "Växjö Katedralskola",
       "inriktning": "Estetiska programmet",
-      "status": "Avslutad"
+      "status": "Avslutad",
+      "icon": "katedral"
     },
     {
       "skola": "Luleå tekniksa universitet",
       "inriktning": "Medie- och kommunikationsvetenskap",
-      "status": "Avslutad"
+      "status": "Avslutad",
+      "icon": "ltu"
     },
     {
       "skola": "Chas academy",
       "inriktning": "Fullstackutvecklare",
-      "status": "Pågående"
+      "status": "Pågående",
+      "icon": "chas"
     }
   ],
 
