@@ -23,27 +23,37 @@
   "arbetslivserfarenhet": [
     {
       "arbetsplats": "Viaplay Group",
-      "beskrivning": "På viaplay groups Radioverkamshet arbetade jag kanalöverskridande. Arbete med bland annat innehåll, klock-anpassning och en del gemensamma sändningar över företagets samlade varumärken så som Rix Fm, Star FM, Bandit rock, Lugna Favoriter, och Power Hit Radio."
+      "beskrivning": "På viaplay groups Radioverkamshet arbetade jag kanalöverskridande. Arbete med bland annat innehåll, klock-anpassning och en del gemensamma sändningar över företagets samlade varumärken så som Rix Fm, Star FM, Bandit rock, Lugna Favoriter, och Power Hit Radio.",
+      "imgPrefix": "Viaplay",
+      "imgAltText": "VIAPLAY GROUP"
     },
 
     {
       "arbetsplats": "Rix FM",
-      "beskrivning": "Har i omgångar producerat och arbetat som redaktör med formaten \"Roger, Laila och RixMorronzoo\" samt \"Eftermiddag med Matrina Thun\". sände även väder-och-trafikrapporter."
+      "beskrivning": "Har i omgångar producerat och arbetat som redaktör med formaten \"Roger, Laila och RixMorronzoo\" samt \"Eftermiddag med Matrina Thun\". sände även väder-och-trafikrapporter.",
+      "imgPrefix": "RixFM",
+      "imgAltText": "RIX FM"
     },
 
     {
       "arbetsplats": "Star FM",
-      "beskrivning": "Utvecklade och sjösattde det nya eftermiddagsblocket på STAR FM tillsammans med Rickard Olsson. Var även producent för programmet under de första säsongerna."
+      "beskrivning": "Utvecklade och sjösattde det nya eftermiddagsblocket på STAR FM tillsammans med Rickard Olsson. Var även producent för programmet under de första säsongerna.",
+      "imgPrefix": "Star",
+      "imgAltText": "STAR FM"
     },
 
     {
       "arbetsplats": "Sveriges Radio",
-      "beskrivning": "Arbetade som programledare på olika redaktioner inom Sveriges radio. Arbetet inkluderade bland annat sändning(självkör) av programmet, intervjuer samt redaktionellt arbete tillsammass med producenter och reportrar."
+      "beskrivning": "Arbetade som programledare på olika redaktioner inom Sveriges radio. Arbetet inkluderade bland annat sändning(självkör) av programmet, intervjuer samt redaktionellt arbete tillsammass med producenter och reportrar.",
+      "imgPrefix": "SR",
+      "imgAltText": "SVERIGES RADIO"
     },
 
     {
       "arbetsplats": "Commercial content",
-      "beskrivning": "Producerade ett gäng olika poddar för produktionsbolaget Commercial contents slutkunder. Uppdragen kunde se olika ut men kunde inkludera formatarbete, skapande av ljudprofil, klipp och mix. Ibland enligt klipplistor."
+      "beskrivning": "Producerade ett gäng olika poddar för produktionsbolaget Commercial contents slutkunder. Uppdragen kunde se olika ut men kunde inkludera formatarbete, skapande av ljudprofil, klipp och mix. Ibland enligt klipplistor.",
+      "imgPrefix": "CC",
+      "imgAltText": "COMMERCIAL CONTENT"
     }
   ],
 
