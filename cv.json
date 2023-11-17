@@ -1,0 +1,68 @@
+{
+  "utbildningar": [
+    {
+      "skola": "Växjö Katedralskola",
+      "inriktning": "Estetiska programmet",
+      "status": "Avslutad"
+    },
+    {
+      "skola": "Luleå tekniksa universitet",
+      "inriktning": "Medie- och kommunikationsvetenskap",
+      "status": "Avslutad"
+    },
+    {
+      "skola": "Chas academy",
+      "inriktning": "Fullstackutvecklare",
+      "status": "Pågående"
+    }
+  ],
+
+  "arbetslivserfarenhet": [
+    {
+      "arbetsplats": "Viaplay Group",
+      "beskrivning": "På viaplay groups Radioverkamshet arbetade jag kanalöverskridande. Arbete med bland annat innehåll, klock-anpassning och en del gemensamma sändningar över företagets samlade varumärken så som Rix Fm, Star FM, Bandit rock, Lugna Favoriter, och Power Hit Radio."
+    },
+
+    {
+      "arbetsplats": "Rix FM",
+      "beskrivning": "Har i omgångar producerat och arbetat som redaktör med formaten \"Roger, Laila och RixMorronzoo\" samt \"Eftermiddag med Matrina Thun\". sände även väder-och-trafikrapporter."
+    },
+
+    {
+      "arbetsplats": "Star FM",
+      "beskrivning": "Utvecklade och sjösattde det nya eftermiddagsblocket på STAR FM tillsammans med Rickard Olsson. Var även producent för programmet under de första säsongerna."
+    },
+
+    {
+      "arbetsplats": "Sveriges Radio",
+      "beskrivning": "Arbetade som programledare på olika redaktioner inom Sveriges radio. Arbetet inkluderade bland annat sändning(självkör) av programmet, intervjuer samt redaktionellt arbete tillsammass med producenter och reportrar."
+    },
+
+    {
+      "arbetsplats": "Commercial content",
+      "beskrivning": "Producerade ett gäng olika poddar för produktionsbolaget Commercial contents slutkunder. Uppdragen kunde se olika ut men kunde inkludera formatarbete, skapande av ljudprofil, klipp och mix. Ibland enligt klipplistor."
+    }
+  ],
+
+  "färdigheter": {
+    "kompetenser": [
+      "Självkör",
+      "Mandozzi",
+      "Digas",
+      "Enps",
+      "Lawo",
+      "RCS Zetta",
+      "Jutel RadioMan",
+      "VoxPro",
+      "Adobe Audition",
+      "Adobe Photoshop",
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Microsoft PowerPoint",
+      "mm."
+    ],
+    "grundläggande kunskaper": ["Adobe Premiere", "Adobe After Effects"]
+  },
+
+  "other": "Van vid både PC och MAC."
+}
