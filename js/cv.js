@@ -3,6 +3,8 @@ console.log("hej");
 
 const schoolCards_container = document.querySelector(".school-cards-container");
 const experienceCard_container = document.querySelector(".experience-card-container");
+const kompetenser_container = document.querySelector(".kompetenser-text")
+
 
 
 
@@ -49,7 +51,6 @@ async function getData() {
         // R E N D E R A R   E R F A R E N H E T :
         // 
 
-
         data.arbetslivserfarenhet.forEach(function (experience) {
             // console.log(experience);
 
@@ -83,11 +84,24 @@ async function getData() {
         })
 
 
+        //
+        // R E N D E R A R   K O M P E T E N S E R :
+        //
+
+        const kompetenser = ArrayToString(data.färdigheter.kompetenser);
+        // console.log(kompetenser);
+        // console.log(typeof kompetenser);
+
+        const grundlKunskaper = ArrayToString(data.färdigheter.grundläggande_kunskaper);
+        // console.log(grundlKunskaper)
 
 
-
-
-
+        kompetenser_container.innerHTML = `
+        <h2>Kompetenser</h2>
+        <p>${kompetenser}</p>
+        <h3>Grundläggande kunskaper</h3>
+        <p>${grundlKunskaper}ssss</p>
+        <p>${data.other}</p>`
 
 
     } else {
@@ -98,4 +112,22 @@ async function getData() {
 };
 
 
+// // // - - - - - - - - - - - - 
+// // //   F U N K T I O N E R:
+// // // - - - - - - - - - - - - 
 
+
+//Funkton som tar en array och returnerar den som en string med varje item komma-separerad. FÖRUTOm det sista itemet som avslutas med en punkt.
+function ArrayToString(array) {
+
+    let string = "";
+    array.forEach(function (item, i, arr) {
+        if (i != arr.length - 1) {
+            string += `${item}, `;
+        } else {
+            string += `${item}.`;
+        };
+    });
+
+    return string;
+};
