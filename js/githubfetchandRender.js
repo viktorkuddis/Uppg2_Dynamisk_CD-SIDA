@@ -1,11 +1,31 @@
-console.log("hej")
 
+
+
+const projectListContainer = document.querySelector(".project-list-container")
+
+//text för status på inladdningen...
+const dynamicText = document.createElement("h2");
+dynamicText.classList = "statusMessage_projects";
+projectListContainer.appendChild(dynamicText);
+
+dynamicText.innerHTML = `
+            <br>
+            Laddar projekt . . .           
+            <br><br><br>
+            `;
+
+
+
+// Ladda in Projekt från github
 getData();
 
 async function getData() {
     const res = await fetch("https://api.github.com/users/viktorkuddis/repos");
     console.log(res);
     if (res.ok) {
+
+        dynamicText.innerHTML = "";
+
         const data = await res.json();
 
         //Sorterar arrayen efter när projektet skapades eftersom json kommer i bokstavsordning:
@@ -33,7 +53,7 @@ async function getData() {
             const imgContainer = document.createElement("div");
             imgContainer.classList.add("project-img-container");
             const img = document.createElement("img");
-            img.innerHTML = "Bildbildbild"
+            img.setAttribute("src", `${repo.homepage}/images/og-image.jpg`);
             imgContainer.appendChild(img);
 
             // Skapar textkontainer och hämtar rubrik och beskrivning av projektet.
@@ -52,7 +72,7 @@ async function getData() {
 
             //rendera projektkortet ut på sidan
 
-            document.querySelector(".project-list-container").appendChild(projectCard);
+            projectListContainer.appendChild(projectCard);
 
         });
 
@@ -61,24 +81,26 @@ async function getData() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     } else {
-        console.log(`Fel vid fetch. ${res.status} ${res.statusText}`)
+
+        let mess = await res.text();
+
+        console.log(`Fel vid fetch. ${res.status} -  ${res.statusText} - ${mess}`)
+
+
+
+        dynamicText.innerHTML = `
+                    <br> 
+                    Hoppsan!
+                    <br> 
+                    Något gick visst fel! 
+                    <br><br>
+                    ${res.status}
+                    <br><br>
+                    `;
+
+        ;
+
     }
 
 }
