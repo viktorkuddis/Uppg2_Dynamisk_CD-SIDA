@@ -18,11 +18,12 @@
     align-items: center;
     border-radius: 0.5rem;
     overflow: hidden;
-    border: 1px solid #92A4B4;
+    border: 1px solid #afc5d8;
 }
 
 .project-card:hover {
-    background-color: rgba(146, 164, 180, 0.1)
+    background-color: rgba(146, 164, 180, 0.1);
+    border: 1px solid #92A4B4;
 }
 
 .project-img-container {
@@ -66,16 +67,16 @@
 
         background-color: aliceblue;
         width: 100%;
-        height: 67%;
+        height: 60%;
         flex-shrink: 100;
     }
 
     .card-text-container {
         flex-grow: unset;
-        height: 33%;
+        height: 40%;
         width: 100%;
         padding: 0.5rem 1rem;
-
+        position: relative;
     }
 
 
@@ -83,6 +84,20 @@
         display: unset;
         color: var(--tertiary-color-no1);
     }
+
+    .card-text-container::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60%;
+        background-image: linear-gradient(transparent, white 90%);
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+}
+
+
 
 
 }
