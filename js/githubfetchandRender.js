@@ -1,4 +1,36 @@
+/* 
+ Denna filen innehåller api call för att hämta githubrepon och rendera ut det på sidan. Samt även den färdiga modal - lösningen.
 
+ */
+
+
+// - - - - - - - - - - - - - - - - - -
+// MODAL START
+
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+const modalHeadding = document.getElementById("modalHeadding");
+const modalText = document.getElementById("modalText");
+const projectGitRepoLink = document.querySelector(".projectGitRepoLink");
+const projectGitPagesLink = document.querySelector(".projectGitPagesLink");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+// MODAL END
+// - - - - - - - - - - - - - - - - - -
 
 
 const projectListContainer = document.querySelector(".project-list-container")
@@ -13,7 +45,6 @@ dynamicText.innerHTML = `
             Laddar projekt . . .           
             <br><br><br>
             `;
-
 
 
 // Ladda in Projekt från github
@@ -40,8 +71,8 @@ async function getData() {
         });
         console.log(data);
 
-
-        data.forEach(function (repo) {
+        //Rendera ut projekt i PORTFOLIO som kort!
+        data.forEach(function (repo, i) {
             console.log(repo.name);
             console.log(repo.description);
             console.log(repo.created_at);
@@ -62,32 +93,41 @@ async function getData() {
             textcontainer.appendChild(document.createElement("h2")).innerText = repo.name.replaceAll("_", " ");
             textcontainer.appendChild(document.createElement("p")).innerText = repo.description;
 
-
-
             //läggertill projektbild och projekttext i projektorter
             projectCard.appendChild(imgContainer);
             projectCard.appendChild(textcontainer);
-
-            console.log(projectCard);
+            // console.log(projectCard);
 
             //rendera projektkortet ut på sidan
-
             projectListContainer.appendChild(projectCard);
 
+
+            // - - - - - - - - -
+            // MODAL
+
+            // Adderar eventlyssnare som ska trigga modal(detta sätta för varje projektkort).
+            projectCard.addEventListener("click", toggleModal);
+
+            // Adderar eventlyssnare som fyller modalen med text baserat på det aktuella elementet:
+            projectCard.addEventListener("click", function () {
+                modalHeadding.textContent = repo.name.replaceAll("_", " ");
+                modalText.textContent = repo.description;
+                projectGitRepoLink.setAttribute("href", repo.html_url);
+                projectGitPagesLink.setAttribute("href", repo.homepage);
+            })
+
+            // MODAL
+            // - - - - - - - - -
+
+
+
         });
-
-
-
-
 
 
     } else {
 
         let mess = await res.text();
-
         console.log(`Fel vid fetch. ${res.status} -  ${res.statusText} - ${mess}`)
-
-
 
         dynamicText.innerHTML = `
                     <br> 
@@ -98,9 +138,6 @@ async function getData() {
                     ${res.status}
                     <br><br>
                     `;
-
-        ;
-
     }
 
 }

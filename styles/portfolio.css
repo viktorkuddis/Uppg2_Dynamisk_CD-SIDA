@@ -24,6 +24,7 @@
 .project-card:hover {
     background-color: rgba(146, 164, 180, 0.2);
     border: 1px solid #92A4B4;
+    cursor: pointer;
 }
 
 .project-img-container {
