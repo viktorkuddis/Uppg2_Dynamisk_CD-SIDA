@@ -56,10 +56,10 @@ async function getData() {
             img.setAttribute("src", `${repo.homepage}/images/og-image.jpg`);
             imgContainer.appendChild(img);
 
-            // Skapar textkontainer och hämtar rubrik och beskrivning av projektet.
+            // Skapar textkontainer och hämtar rubrik och beskrivning av projektet. Ersätter alla understreck i rubriken med mellanslag.
             const textcontainer = document.createElement("div");
             textcontainer.classList.add("card-text-container");
-            textcontainer.appendChild(document.createElement("h2")).innerText = repo.name;
+            textcontainer.appendChild(document.createElement("h2")).innerText = repo.name.replaceAll("_", " ");
             textcontainer.appendChild(document.createElement("p")).innerText = repo.description;
 
 

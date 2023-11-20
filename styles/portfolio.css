@@ -22,7 +22,7 @@
 }
 
 .project-card:hover {
-    background-color: rgba(146, 164, 180, 0.1);
+    background-color: rgba(146, 164, 180, 0.2);
     border: 1px solid #92A4B4;
 }
 
@@ -95,9 +95,4 @@
         bottom: 0px;
         left: 0px;
     }
-}
-
-
-
-
 }
