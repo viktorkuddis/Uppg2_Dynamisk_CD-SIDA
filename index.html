@@ -18,8 +18,30 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/header-and-footer.css">
+    <link rel="stylesheet" href="styles/modal.css">
 
 </head>
+
+<!-- - - - - - - - - - - - - -->
+<!-- - - - - start - - - - - -->
+<!-- MODAL MODAL MODAL MODAL -->
+
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modalHeadding"></h2>
+        <p id="modalText"></p>
+        <div>
+            <a class="projectGitRepoLink btn" target="_blank">GitHub Repo
+            </a>
+            <a class="projectGitPagesLink btn" target="_blank">GitHub Pages</a>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL MODAL MODAL MODAL -->
+<!-- - - - - - end - - - - - -->
+<!-- - - - - - - - - - - - - -->
 
 <body>
     <div class="header-wrapping">
@@ -85,56 +107,52 @@
         projects-wrapping">
             <section class="projekt-cards_section universal-content-padding">
 
-                <h2>Projekt</h2>
+                <h2 id="dynamicText"></h2>
 
                 <hr>
 
                 <div class="cards-container">
-                    <div class="card">
-                        <div class="card-image_container">
-                            <img src="images/project-images/project-layout.png" alt=" ">
 
-                        </div>
-                        <div class="card-information_container">
-                            <h3>
-                                Layout, Sillah Gladh
-                            </h3>
-                            <a class="btn card-btn" href="portfolio.html">Se mer!</a>
-                        </div>
-                    </div>
                     <div class="card">
                         <div class="card-image_container">
-                            <img src="images/project-images/project-margaret.png" alt="">
+                            <img id="projectCard-0">
                         </div>
                         <div class="card-information_container">
-                            <h3>
-                                Kikk Ass Coder, Margaret
-                            </h3>
-                            <a class="btn card-btn" href="portfolio.html">Se mer!</a>
+                            <h3 id="projectHeadding-0"></h3>
+                            <a class="btn card-btn" id="projectBtn-0">Se mer!</a>
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-image_container">
-                            <img src="images/project-images/project-trafikljus.png" alt="">
+                            <img id="projectCard-1">
+                            <div class="card-information_container">
+                                <h3 id="projectHeadding-1"></h3>
+                                <a class="btn card-btn" id="projectBtn-1">Se mer!</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image_container">
+                            <img id="projectCard-2">
                         </div>
                         <div class=" card-information_container">
-                            <h3>
-                                Trafikljus, Borås stad
-                            </h3>
-                            <a class="btn card-btn" href="portfolio.html">Se mer!</a>
+                            <h3 id="projectHeadding-2"></h3>
+                            <a class="btn card-btn" id="projectBtn-2">Se mer!</a>
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-image_container">
-                            <img src="images/project-images/project-tankvart.png" alt="">
+                            <img id="projectCard-3">
                         </div>
                         <div class="card-information_container">
-                            <h3>
-                                tankvart.se
-                            </h3>
-                            <a class="btn card-btn" href="portfolio.html">Se mer!</a>
+                            <h3 id="projectHeadding-3"></h3>
+                            <a class="btn card-btn" id="projectBtn-3">Se mer!</a>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>
@@ -172,7 +190,7 @@
 
 
 
-
+    <script src="./js/homepage_githubfetchandRender.js"></script>
 </body>
 
 </html>
