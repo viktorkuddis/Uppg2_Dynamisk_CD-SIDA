@@ -1,9 +1,11 @@
 /* 
  Denna filen innehåller api call för att hämta githubrepon och rendera ut det på sidan. Samt även den färdiga modal - lösningen.
-
  */
 
 
+
+
+// - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - -
 // MODAL START
 
@@ -25,12 +27,14 @@ function windowOnClick(event) {
     }
 }
 
-trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
 // MODAL END
 // - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
 
 
 const projectListContainer = document.querySelector(".project-list-container")
@@ -45,7 +49,6 @@ dynamicText.innerHTML = `
             Laddar projekt . . .           
             <br><br><br>
             `;
-
 
 // Ladda in Projekt från github
 getData();
@@ -101,11 +104,8 @@ async function getData() {
             //rendera projektkortet ut på sidan
             projectListContainer.appendChild(projectCard);
 
-
-            // - - - - - - - - -
             // MODAL
-
-            // Adderar eventlyssnare som ska trigga modal(detta sätta för varje projektkort).
+            // Adderar eventlyssnare som ska trigga modal(detta sätts för varje projektkort).
             projectCard.addEventListener("click", toggleModal);
 
             // Adderar eventlyssnare som fyller modalen med text baserat på det aktuella elementet:
@@ -116,12 +116,9 @@ async function getData() {
                 projectGitPagesLink.setAttribute("href", repo.homepage);
             })
 
-            // MODAL
-            // - - - - - - - - -
-
-
-
         });
+
+
 
 
     } else {
