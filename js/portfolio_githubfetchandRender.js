@@ -88,6 +88,7 @@ async function getData() {
             imgContainer.classList.add("project-img-container");
             const img = document.createElement("img");
             img.setAttribute("src", `${repo.homepage}/images/og-image.jpg`);
+            img.setAttribute("alt", "projekt");
             imgContainer.appendChild(img);
 
             // Skapar textkontainer och hämtar rubrik och beskrivning av projektet. Ersätter alla understreck i rubriken med mellanslag.

@@ -73,6 +73,7 @@ async function getData() {
             const projectBtn = document.getElementById(`projectBtn-${i}`)
 
             projectCard.setAttribute("src", `${data[i].homepage}/images/og-image.jpg`);
+            projectCard.setAttribute("alt", "");
             projectHeadding.textContent = data[i].name.replaceAll("_", " ");
 
             // MODAL
