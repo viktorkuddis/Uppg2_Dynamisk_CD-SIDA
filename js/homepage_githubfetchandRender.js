@@ -66,27 +66,36 @@ async function getData() {
         });
         console.log(data);
 
-        //Rendera ut innehåll i korte,:
-        for (let i = 0; i < 4; i++) {
-            const projectCard = document.getElementById(`projectCard-${i}`);
-            const projectHeadding = document.getElementById(`projectHeadding-${i}`);
-            const projectBtn = document.getElementById(`projectBtn-${i}`)
+        let cardIndexCounder = 0; // Anger vilket kort i domen jag ska skicka in information i. Uppdateras i slutet på ifsatsen. dvs om information lyckats renderas. Annars görs nytt försök med samma kort fast med nästa repo från apit
 
-            projectCard.setAttribute("src", `${data[i].homepage}/images/og-image.jpg`);
-            projectCard.setAttribute("alt", "");
-            projectHeadding.textContent = data[i].name.replaceAll("_", " ");
+        //Rendera ut innehåll i korten:
+        for (let i = 0; i <= data.length; i++) {
+            //om mitt repos topic innehåller "to-cv-sida" så tillåts det repot att renderas ut på sidan.
+            /* ((i!)topics kan sättas via repositoiets Githubsida under inställningar, kugghjulet "Edit repository details".)  */
+            if (data[i].topics.includes("to-cv-sida")) {
+                const projectCard = document.getElementById(`projectCard-${cardIndexCounder}`);
+                const projectHeadding = document.getElementById(`projectHeadding-${cardIndexCounder}`);
+                const projectBtn = document.getElementById(`projectBtn-${cardIndexCounder}`)
 
-            // MODAL
-            // Adderar eventlyssnare som ska trigga modal(detta sätts för varje projektkort).
-            projectBtn.addEventListener("click", toggleModal);
+                projectCard.setAttribute("src", `${data[i].homepage}/images/og-image.jpg`);
+                projectCard.setAttribute("alt", "");
+                projectHeadding.textContent = data[i].name.replaceAll("_", " ");
 
-            // Adderar eventlyssnare som fyller modalen med text baserat på det aktuella elementet:
-            projectBtn.addEventListener("click", function () {
-                modalHeadding.textContent = data[i].name.replaceAll("_", " ");
-                modalText.textContent = data[i].description;
-                projectGitRepoLink.setAttribute("href", data[i].html_url);
-                projectGitPagesLink.setAttribute("href", data[i].homepage);
-            })
+                // MODAL
+                // Adderar eventlyssnare som ska trigga modal(detta sätts för varje projektkort).
+                projectBtn.addEventListener("click", toggleModal);
+
+                // Adderar eventlyssnare som fyller modalen med text baserat på det aktuella elementet:
+                projectBtn.addEventListener("click", function () {
+                    modalHeadding.textContent = data[i].name.replaceAll("_", " ");
+                    modalText.textContent = data[i].description;
+                    projectGitRepoLink.setAttribute("href", data[i].html_url);
+                    projectGitPagesLink.setAttribute("href", data[i].homepage);
+                });
+
+                cardIndexCounder++;
+
+            }
 
         }
 
@@ -98,7 +107,7 @@ async function getData() {
         let mess = await res.text();
         console.log(`Fel vid fetch. ${res.status} -  ${res.statusText} - ${mess}`)
 
-        dynamicText.innerHTML = `<p>Hoppsan! Gick inteatt ladda in senaste projekten. ${res.status}</p>`;
+        dynamicText.innerHTML = `<p>Hoppsan! Gick inte att ladda in senaste projekten. ${res.status}</p>`;
     }
 
 }

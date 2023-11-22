@@ -74,48 +74,58 @@ async function getData() {
         });
         console.log(data);
 
+
         //Rendera ut projekt i PORTFOLIO som kort!
         data.forEach(function (repo, i) {
-            console.log(repo.name);
-            console.log(repo.description);
-            console.log(repo.created_at);
-            // SKapar projektkort
-            const projectCard = document.createElement("div");
-            projectCard.classList.add("project-card");
+            console.log(repo.topics);
+            //om mitt repos topic innehåller "to-cv-sida" så tillåts det repot att renderas ut på sidan.
+            /* ((i!)topics kan sättas via repositoiets Githubsida under inställningar, kugghjulet "Edit repository details".)  */
+            if (repo.topics.includes("to-cv-sida")) {
 
-            // Skapar bildcontainer och hämtar bild
-            const imgContainer = document.createElement("div");
-            imgContainer.classList.add("project-img-container");
-            const img = document.createElement("img");
-            img.setAttribute("src", `${repo.homepage}/images/og-image.jpg`);
-            img.setAttribute("alt", "projekt");
-            imgContainer.appendChild(img);
 
-            // Skapar textkontainer och hämtar rubrik och beskrivning av projektet. Ersätter alla understreck i rubriken med mellanslag.
-            const textcontainer = document.createElement("div");
-            textcontainer.classList.add("card-text-container");
-            textcontainer.appendChild(document.createElement("h2")).innerText = repo.name.replaceAll("_", " ");
-            textcontainer.appendChild(document.createElement("p")).innerText = repo.description;
+                console.log(repo.name);
+                console.log(repo.description);
+                console.log(repo.created_at);
+                // SKapar projektkort
+                const projectCard = document.createElement("div");
+                projectCard.classList.add("project-card");
 
-            //läggertill projektbild och projekttext i projektorter
-            projectCard.appendChild(imgContainer);
-            projectCard.appendChild(textcontainer);
-            // console.log(projectCard);
+                // Skapar bildcontainer och hämtar bild
+                const imgContainer = document.createElement("div");
+                imgContainer.classList.add("project-img-container");
+                const img = document.createElement("img");
+                img.setAttribute("src", `${repo.homepage}/images/og-image.jpg`);
+                img.setAttribute("alt", "projekt");
+                imgContainer.appendChild(img);
 
-            //rendera projektkortet ut på sidan
-            projectListContainer.appendChild(projectCard);
+                // Skapar textkontainer och hämtar rubrik och beskrivning av projektet. Ersätter alla understreck i rubriken med mellanslag.
+                const textcontainer = document.createElement("div");
+                textcontainer.classList.add("card-text-container");
+                textcontainer.appendChild(document.createElement("h2")).innerText = repo.name.replaceAll("_", " ");
+                textcontainer.appendChild(document.createElement("p")).innerText = repo.description;
 
-            // MODAL
-            // Adderar eventlyssnare som ska trigga modal(detta sätts för varje projektkort).
-            projectCard.addEventListener("click", toggleModal);
+                //läggertill projektbild och projekttext i projektorter
+                projectCard.appendChild(imgContainer);
+                projectCard.appendChild(textcontainer);
+                // console.log(projectCard);
 
-            // Adderar eventlyssnare som fyller modalen med text baserat på det aktuella elementet:
-            projectCard.addEventListener("click", function () {
-                modalHeadding.textContent = repo.name.replaceAll("_", " ");
-                modalText.textContent = repo.description;
-                projectGitRepoLink.setAttribute("href", repo.html_url);
-                projectGitPagesLink.setAttribute("href", repo.homepage);
-            })
+                //rendera projektkortet ut på sidan
+                projectListContainer.appendChild(projectCard);
+
+                // MODAL
+                // Adderar eventlyssnare som ska trigga modal(detta sätts för varje projektkort).
+                projectCard.addEventListener("click", toggleModal);
+
+                // Adderar eventlyssnare som fyller modalen med text baserat på det aktuella elementet:
+                projectCard.addEventListener("click", function () {
+                    modalHeadding.textContent = repo.name.replaceAll("_", " ");
+                    modalText.textContent = repo.description;
+                    projectGitRepoLink.setAttribute("href", repo.html_url);
+                    projectGitPagesLink.setAttribute("href", repo.homepage);
+                });
+
+            };
+
 
         });
 
