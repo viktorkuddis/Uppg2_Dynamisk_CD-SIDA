@@ -4,8 +4,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
     padding: var(--universal-content-padding);
+
+    position: relative;
+}
+
+.logo_section {
+    margin-right: auto;
 }
 
 .logo_section a {
@@ -105,6 +112,34 @@ header {
     background-color: var(--primary-color);
 }
 
+/* themebtn */
+#themeBtn {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #ffffff33;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 1.5rem;
+    bottom: -2.5rem;
+
+}
+
+#themeBtn:hover {
+    background-color: rgb(255, 255, 255, 0.3)
+}
+
+.themeBtn_icon {
+    height: 1.5rem;
+    fill: white;
+}
+
+/* ---------- */
+
+
 
 @media (min-width: 768px) {
 
@@ -135,6 +170,10 @@ header {
 
     #active {
         color: white;
+    }
+
+    #themeBtn {
+        position: unset;
     }
 
 
