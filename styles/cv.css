@@ -50,6 +50,11 @@
     color: var(--dark-text-color);
 }
 
+.erfarenhet-wrapping h1,
+.erfarenhet-wrapping h2 {
+    color: var(--textColorOnLight-and-DarkBackground);
+}
+
 .experience-card img {
     max-height: 15vw;
     max-width: 50vw;
@@ -70,10 +75,11 @@
 .experience-card {
 
     text-align: center;
+    background-color: var(--card-BackgroudColor);
 }
 
 .experience-card:hover {
-    background-color: rgba(146, 164, 180, 0.1)
+    background-color: rgb(210, 210, 210);
 }
 
 .kompetenser-wrapping {

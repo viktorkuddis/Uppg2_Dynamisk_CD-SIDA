@@ -6,17 +6,30 @@
 
 :root {
     --primary-color: #2FB4B5;
+    --header-color: #2FB4B5;
     --secondary-color: #FC5D79;
     --tertiary-color-no1: #2D3947;
     --tertiary-color-no2: #19222B;
     --light-background-color: #FFFFFF;
     --light-text-color: #FFFFFF;
+    --card-BackgroudColor: #ffffff;
+    --textColorOnLight-and-DarkBackground: var(--tertiary-color-no2);
     --dark-text-color: var(--tertiary-color-no2);
 
     --main-font: 'Open Sans', sans-serif;
     --accent-font: 'Montserrat', sans-serif;
 
     --universal-content-padding: 1rem;
+
+}
+
+.dark_theme {
+    --primary-color: black;
+    --light-background-color: black;
+    --card-BackgroudColor: whitesmoke;
+    --textColorOnLight-and-DarkBackground: white;
+
+
 }
 
 /* sprider ut elementen över sidan från top till btm i de fall skärmen är för stor eller sidans innehåll är för kort för att fylla hela skämen*/

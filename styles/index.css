@@ -2,6 +2,7 @@
 
 .hero-wrapping {
     background-color: var(--primary-color);
+    padding-top: 1rem;
 }
 
 .hero-section {

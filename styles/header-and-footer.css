@@ -109,7 +109,7 @@ header {
 
 
 .header-wrapping {
-    background-color: var(--primary-color);
+    background-color: var(--header-color);
 }
 
 /* themebtn */
@@ -124,7 +124,9 @@ header {
 
     position: absolute;
     right: 1.5rem;
-    bottom: -2.5rem;
+    bottom: -3.5rem;
+
+    cursor: pointer;
 
 }
 
@@ -194,7 +196,7 @@ header {
 
 
 .footer-wrapping {
-    background-color: var(--light-background-color);
+    background-color: var(--card-BackgroudColor);
 
 }
 
