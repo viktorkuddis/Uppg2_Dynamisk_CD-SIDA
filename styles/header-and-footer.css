@@ -116,7 +116,7 @@ header {
 #themeBtn {
     height: 2.5rem;
     width: 2.5rem;
-    background-color: #ffffff33;
+    background-color: #67dfe1c6;
     border-radius: 999px;
     display: flex;
     align-items: center;
@@ -131,7 +131,7 @@ header {
 }
 
 #themeBtn:hover {
-    background-color: rgb(255, 255, 255, 0.3)
+    background-color: rgba(210, 210, 210, 0.61)
 }
 
 .themeBtn_icon {
