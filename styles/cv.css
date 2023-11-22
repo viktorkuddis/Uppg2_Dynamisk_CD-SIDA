@@ -76,6 +76,8 @@
 
     text-align: center;
     background-color: var(--card-BackgroudColor);
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 
 .experience-card:hover {
@@ -144,8 +146,7 @@
         text-align: left;
         display: flex;
         align-items: center;
-
-        border-radius: 0.5rem;
+        padding: unset;
         border: 1px solid #92A4B4;
     }
 
