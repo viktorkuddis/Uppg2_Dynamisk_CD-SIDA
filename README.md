@@ -1,7 +1,7 @@
 # Uppg2_Dynamisk_CD-SIDA
 **Viktor Magnusson**
 
-Min befintliga JavaScriptlögning är en modal jag hittade på code pen: (https://codepen.io/codejockie/pen/NBwjyd)
+Min befintliga JavaScriptlösning är en modal jag hittade på code pen: (https://codepen.io/codejockie/pen/NBwjyd)
 
 ### GitHub Pages
 [Här är länken til den publicerade sidan på Github pages](https://viktorkuddis.github.io/Uppg2_Dynamisk_CV-SIDA/)
