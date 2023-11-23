@@ -69,7 +69,7 @@ async function getData() {
         let cardIndexCounder = 0; // Anger vilket kort i domen jag ska skicka in information i. Uppdateras i slutet på ifsatsen. dvs om information lyckats renderas. Annars görs nytt försök med samma kort fast med nästa repo från apit
 
         //Rendera ut innehåll i korten:
-        for (let i = 0; i <= data.length; i++) {
+        for (let i = 0; i <= data.length && cardIndexCounder < 4; i++) {
             //om mitt repos topic innehåller "to-cv-sida" så tillåts det repot att renderas ut på sidan.
             /* ((i!)topics kan sättas via repositoiets Githubsida under inställningar, kugghjulet "Edit repository details".)  */
             if (data[i].topics.includes("to-cv-sida")) {
@@ -80,6 +80,7 @@ async function getData() {
                 projectCard.setAttribute("src", `${data[i].homepage}/images/og-image.jpg`);
                 projectCard.setAttribute("alt", "");
                 projectHeadding.textContent = data[i].name.replaceAll("_", " ");
+
 
                 // MODAL
                 // Adderar eventlyssnare som ska trigga modal(detta sätts för varje projektkort).
