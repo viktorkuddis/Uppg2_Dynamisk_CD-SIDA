@@ -2,7 +2,7 @@
  Denna filen innehåller api call för att hämta githubrepon och rendera ut det på sidan. Samt även den färdiga modal - lösningen.
  */
 
-
+// modal pop up är tagen från externkälla.https://codepen.io/codejockie/pen/NBwjyd
 
 
 // - - - - - - - - - - - - - - - - - -
