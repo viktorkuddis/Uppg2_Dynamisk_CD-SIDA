@@ -1,4 +1,4 @@
-# Uppg2_Dynamisk_CD-SIDA
+# Uppg2_Dynamisk_CV-SIDA
 **Viktor Magnusson**
 
 Min befintliga JavaScriptlösning är en modal jag hittade på code pen: (https://codepen.io/codejockie/pen/NBwjyd)
